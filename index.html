@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LouLou Beauty Salon | 極致指尖美學</title>
     <style>
-        /* 基礎全域樣式 */
         body { 
             margin: 0; 
             padding: 0; 
@@ -14,6 +13,8 @@
             color: #333; 
             -webkit-font-smoothing: antialiased; 
         }
+        
+        /* 導覽列 */
         .header { 
             position: fixed; 
             top: 0; 
@@ -36,29 +37,64 @@
             background: #C5A059; 
             color: #fff; 
             text-decoration: none; 
-            padding: 8px 18px; 
-            border-radius: 20px; 
-            font-size: 0.8rem; 
-            font-weight: bold; 
-        }
-        
-        .hero { 
-            padding: 130px 20px 40px; 
-            text-align: center; 
-        }
-        .hero h1 { 
-            font-size: 2.4rem; 
-            margin: 0 0 15px; 
-            font-weight: 800; 
-        }
-        .hero p { 
-            color: #999; 
+            padding: 10px 20px; 
+            border-radius: 25px; 
             font-size: 0.85rem; 
-            line-height: 1.8; 
-            margin-bottom: 30px; 
+            font-weight: bold; 
+            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
         }
 
-        /* 價目表樣式 */
+        /* 懸浮 LINE 按鈕 */
+        .floating-line {
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .floating-line:active { transform: scale(0.9); }
+        .line-icon {
+            background: #06C755;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 5px;
+        }
+        .line-text {
+            background: rgba(255,255,255,0.9);
+            color: #06C755;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero { padding: 130px 20px 40px; text-align: center; }
+        .hero h1 { font-size: 2.4rem; margin: 0 0 15px; font-weight: 800; }
+        .hero p { color: #999; font-size: 0.85rem; line-height: 1.8; margin-bottom: 30px; }
+
+        .cta-box { display: flex; flex-direction: column; gap: 12px; padding: 0 20px; max-width: 400px; margin: 0 auto; }
+        .btn-booking { 
+            background: #111; 
+            color: #fff; 
+            text-decoration: none; 
+            padding: 18px; 
+            border-radius: 15px; 
+            font-weight: bold; 
+            text-align: center; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        }
+
+        /* 價目表 */
         .price-section { padding: 40px 20px; background: #fff; border-radius: 40px 40px 0 0; }
         .section-title { text-align: center; margin-bottom: 30px; }
         .section-title h2 { color: #C5A059; font-size: 1.2rem; letter-spacing: 3px; margin: 0; }
@@ -71,26 +107,23 @@
         .item-dots { flex: 1; border-bottom: 1px dotted #ddd; margin: 0 10px; position: relative; top: -4px; }
         .item-price { font-size: 0.9rem; font-weight: bold; color: #333; }
 
-        /* 作品集區域 - 更新圖片 */
+        /* 作品集 */
         .gallery-section { padding: 40px 15px; text-align: center; background: #FDFBF9; }
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 500px; margin: 0 auto; }
         .gallery-item { background: #eee; aspect-ratio: 1 / 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        /* 服務資訊區塊 */
         .info-section { background: #fff; padding: 40px 20px; }
         .info-item { background: #FDFBF9; padding: 20px; border-radius: 20px; margin-bottom: 15px; }
         .info-item h4 { margin: 0 0 5px; color: #C5A059; font-size: 1rem; }
         .info-item p, .info-item a { margin: 0; font-size: 0.85rem; color: #666; text-decoration: none; }
         
-        /* 地圖點擊優化 */
         .map-container { position: relative; width: 100%; margin-top: 25px; }
         .map-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; }
         .map-wrapper { width: 100%; height: 280px; border-radius: 25px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.1); pointer-events: none; }
         
-        .footer { background: #111; color: #fff; padding: 60px 20px; text-align: center; }
+        .footer { background: #111; color: #fff; padding: 60px 20px; text-align: center; padding-bottom: 100px; }
         .footer h3 { color: #C5A059; letter-spacing: 5px; margin-bottom: 30px; }
-        .footer-links a { color: #888; text-decoration: none; font-size: 0.8rem; border: 1px solid #333; padding: 10px 20px; border-radius: 30px; margin: 0 5px; }
     </style>
 </head>
 <body>
@@ -98,14 +131,28 @@
     <!-- 導覽列 -->
     <div class="header">
         <div class="brand-name">LOULOU</div>
-        <a href="https://line.me/R/ti/p/@956kiyzz" class="book-now">立即預約</a>
+        <a href="https://tw.hotcakeapp.com/g/A6KLEF" class="book-now" target="_blank">立即預約</a>
     </div>
+
+    <!-- 懸浮 LINE 客服按鈕 -->
+    <a href="https://line.me/R/ti/p/@956kiyzz" class="floating-line" target="_blank">
+        <div class="line-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 10.304c0-5.231-5.373-9.471-12-9.471s-12 4.24-12 9.471c0 4.689 4.265 8.599 10.031 9.334.39.084.922.257 1.058.591.121.303.079.778.038 1.084l-.17 1.022c-.051.303-.245 1.186 1.054.647 1.299-.538 6.999-4.123 9.541-7.041 1.543-1.687 2.448-3.636 2.448-5.637zm-15.688 3.518h-1.631c-.191 0-.346-.156-.346-.348v-4.102c0-.191.155-.348.346-.348h1.631c.191 0 .346.157.346.348v.571c0 .191-.155.348-.346.348h-1.06v.572h1.06c.191 0 .346.157.346.348v.572c0 .191-.155.348-.346.348h-1.06v.571h1.06c.191 0 .346.157.346.348v.572c0 .192-.155.348-.346.348zm3.693 0h-1.631c-.191 0-.346-.156-.346-.348v-4.102c0-.191.155-.348.346-.348h.57c.191 0 .346.157.346.348v3.53h.715c.191 0 .346.157.346.348v.572c0 .192-.155.348-.346.348zm2.741 0h-.57c-.191 0-.346-.156-.346-.348v-4.102c0-.191.155-.348.346-.348h.57c.191 0 .346.157.346.348v4.102c0 .192-.155.348-.346.348zm4.493 0h-.571c-.191 0-.346-.156-.346-.348v-2.348l-1.353-1.92c-.113-.159-.039-.182.046-.182h.674c.12 0 .227.054.293.151l1.011 1.51 1.011-1.51c.066-.097.173-.151.293-.151h.674c.085 0 .159.023.046.182l-1.353 1.92v2.348c0 .192-.155.348-.346.348z"/>
+            </svg>
+        </div>
+        <div class="line-text">@956kiyzz</div>
+    </a>
 
     <!-- 標題區 -->
     <div class="hero">
         <h2>Professional Studio</h2>
         <h1>LouLou Beauty</h1>
         <p>結合藝術靈感與極致護理<br>打造專屬您的閃耀美學</p>
+        
+        <div class="cta-box">
+            <a href="https://tw.hotcakeapp.com/g/A6KLEF" class="btn-booking" target="_blank">夯客線上預約系統</a>
+        </div>
     </div>
 
     <!-- 價目表 -->
@@ -129,35 +176,21 @@
         </div>
     </div>
 
-    <!-- 作品集區 - 使用新上傳的照片網址 -->
+    <!-- 作品集區 -->
     <div class="gallery-section">
         <h3 style="letter-spacing: 2px; margin-bottom: 20px; font-size: 1rem;">Portfolio 作品集</h3>
         <div class="gallery-grid">
-            <!-- 作品 1 -->
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" alt="[作品 1]">
-            </div>
-            <!-- 作品 2 -->
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" alt="[作品 2]">
-            </div>
-            <!-- 作品 3 -->
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" alt="[作品 3]">
-            </div>
-            <!-- 作品 4 -->
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" alt="[作品 4]">
-            </div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" alt="作品 1"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" alt="作品 2"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" alt="作品 3"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" alt="作品 4"></div>
         </div>
-        <p style="font-size: 0.75rem; color: #aaa; margin-top: 15px;">※ 更多作品歡迎關注官方 Instagram</p>
     </div>
 
     <!-- 服務資訊與導航 -->
     <div class="info-section">
         <div class="info-item">
             <h4>店舖位置 Location</h4>
-            <!-- 使用您提供的新地圖連結 -->
             <a href="https://maps.app.goo.gl/jbUy9vkDJ9xKHgYj8?g_st=il" target="_blank">台北市大同區南京西路89號3F (點擊導航)</a>
         </div>
         <div class="info-item">
@@ -166,24 +199,5 @@
         </div>
 
         <div class="map-container">
-            <!-- 點擊地圖區塊會跳轉至您提供的新地圖連結 -->
             <a href="https://maps.app.goo.gl/jbUy9vkDJ9xKHgYj8?g_st=il" target="_blank" class="map-link-overlay"></a>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.545860715367!2d121.5147823!3d25.0543666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96b997c4199%3A0x673c683889163e77!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5Y2X5Lqs6KW_6LevODnomZ8zZg!5e0!3m2!1szh-TW!2stw!4v1710245000000!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <p style="text-align: center; font-size: 0.7rem; color: #C5A059; margin-top: 8px;">📍 點擊地圖即可開啟 Google Maps 導覽</p>
-        </div>
-    </div>
-
-    <!-- 頁尾 -->
-    <div class="footer">
-        <h3>LouLou Beauty Salon</h3>
-        <div class="footer-links">
-            <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank">LINE</a>
-            <a href="https://www.instagram.com/lou.lou_beautysalon" target="_blank">Instagram</a>
-        </div>
-        <p style="margin-top: 40px; color: #444; font-size: 10px; letter-spacing: 2px;">© 2024 LOULOU BEAUTY SALON</p>
-    </div>
-
-</body>
-</html>
+            <div class="map-
