@@ -68,6 +68,17 @@
         .nav-link:hover::after {
             width: 100%;
         }
+
+        /* 手機版選單動畫 */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.active {
+            max-height: 300px;
+            padding: 1.5rem 0;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -76,16 +87,31 @@
     <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-[0.3em] text-[#B76E79] serif-font">LOULOU</a>
+            
+            <!-- 桌面版連結 -->
             <div class="hidden md:flex space-x-10 text-xs tracking-widest font-medium text-gray-400">
-                <a href="#price" class="nav-link hover:text-[#B76E79] transition-colors">PRICE</a>
-                <a href="#gallery" class="nav-link hover:text-[#B76E79] transition-colors">PORTFOLIO</a>
-                <a href="#location" class="nav-link hover:text-[#B76E79] transition-colors">LOCATION</a>
+                <a href="#price" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Price</a>
+                <a href="#gallery" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Portfolio</a>
+                <a href="#location" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Location</a>
             </div>
-            <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="hidden md:block btn-shine bg-[#B76E79] text-white px-8 py-2.5 rounded-full text-sm font-medium shadow-md">
-                線上預約
-            </a>
-            <div class="md:hidden text-gray-400">
-                <i data-lucide="menu"></i>
+
+            <div class="flex items-center gap-4">
+                <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="hidden md:block btn-shine bg-[#B76E79] text-white px-8 py-2.5 rounded-full text-sm font-medium shadow-md">
+                    線上預約
+                </a>
+                <!-- 手機版選單按鈕 -->
+                <button id="menu-toggle" class="md:hidden text-gray-400 p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 手機版下拉選單 -->
+        <div id="mobile-menu" class="md:hidden bg-white border-b border-gray-100 px-6">
+            <div class="flex flex-col space-y-6 text-sm tracking-[0.2em] font-medium text-gray-500 text-center">
+                <a href="#price" class="mobile-nav-link">PRICE 價目表</a>
+                <a href="#gallery" class="mobile-nav-link">PORTFOLIO 作品集</a>
+                <a href="#location" class="mobile-nav-link">LOCATION 地點</a>
             </div>
         </div>
     </nav>
@@ -158,18 +184,4 @@
                     </h3>
                     <div class="space-y-6">
                         <div class="price-item"><span class="font-light">卸甲續作</span><span class="text-sm font-semibold tracking-tighter">$300</span></div>
-                        <div class="price-item"><span class="font-light">純卸甲</span><span class="text-sm font-semibold tracking-tighter">$500</span></div>
-                    </div>
-                </div>
-
-                <!-- 增值服務 -->
-                <div>
-                    <h3 class="text-[#B76E79] text-lg font-medium mb-8 flex items-center gap-3">
-                        <span class="w-8 h-[1px] bg-[#B76E79]"></span>
-                        Add-on 增值服務
-                    </h3>
-                    <div class="space-y-6">
-                        <div class="price-item"><span class="font-light">足部坎甲矯正 (單指)</span><span class="text-sm font-semibold tracking-tighter">$800</span></div>
-                        <div class="price-item"><span class="font-light">延甲服務 (單指)</span><span class="text-sm font-semibold tracking-tighter">$150</span></div>
-                        <div class="price-item"><span class="font-light">斷裂修補 (單指)</span><span class="text-sm font-semibold tracking-tighter">$100</span></div>
-                        <div class="price-item"><span class="font-light">單去足底繭</span><span class="text-sm f
+                        <div class="price-item"><span class="font-light">純卸甲</span><span class="text-sm font-semibold tracking-tighter">$500</
