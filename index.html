@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -19,3 +20,87 @@ body { font-family: 'Montserrat', 'Noto Serif TC', serif; background-color: var(
 </style>
 </head>
 <body class="overflow-x-hidden">
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center glass-nav">
+    <div class="text-xl md:text-2xl font-bold tracking-[0.3em] gold-text">LOULOU</div>
+    <div class="hidden md:flex space-x-8 text-xs tracking-widest uppercase font-semibold text-gray-600">
+        <a href="#gallery" class="hover:text-[#C5A059] transition">熱門作品</a>
+        <a href="#location" class="hover:text-[#C5A059] transition">交通導航</a>
+        <a href="https://www.instagram.com/lou.lou_beautysalon?igsh=MXR6cmVxOHV3c2h3Zg%3D%3D&utm_source=qr" target="_blank" class="hover:text-[#C5A059] transition">IG 作品</a>
+        <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="bg-gold text-white px-6 py-2 rounded-full shadow-md">立即預約</a>
+    </div>
+    <div class="md:hidden">
+         <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="text-xs bg-gold text-white px-4 py-1 rounded-full">預約 LINE</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="min-h-screen flex items-center pt-20 bg-white">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="z-10 text-center md:text-left">
+            <h2 class="gold-text tracking-[0.4em] uppercase text-sm mb-4 font-bold">Luxury Nail Art Studio</h2>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">LouLou <br><span class="italic font-light opacity-80 text-4xl md:text-5xl text-gray-400">Beauty Salon</span></h1>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="bg-gold text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle"></i> LINE 預約帳號
+                </a>
+                <a href="https://www.instagram.com/lou.lou_beautysalon?igsh=MXR6cmVxOHV3c2h3Zg%3D%3D&utm_source=qr" target="_blank" class="border border-gold gold-text px-10 py-5 rounded-full font-bold text-center">
+                    瀏覽 IG 作品
+                </a>
+            </div>
+        </div>
+        <div class="relative mt-12 md:mt-0">
+            <div class="img-container shadow-2xl rounded-[40px] border-[12px] border-white">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&q=80&w=800" alt="LouLou精選主圖" class="w-full aspect-[4/5] object-cover">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Gallery -->
+<section id="gallery" class="py-24 bg-[#F9F6F2]">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-serif font-bold mb-16">IG 熱門點閱作品</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="img-container h-80 shadow-md"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover"></div>
+            <div class="img-container h-80 shadow-md md:mt-12"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover"></div>
+            <div class="img-container h-80 shadow-md"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover"></div>
+            <div class="img-container h-80 shadow-md md:mt-12"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Location -->
+<section id="location" class="py-24 bg-white">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="h-[400px] rounded-[30px] overflow-hidden shadow-2xl">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.1582236353916!2d121.5422634!3d25.0287413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa256193e2b9%3A0x633d7b43a9018616!2zTG91TG91IEJlYXV0eSBTYWxvbue-juWFr-e-juatow!5e0!3m2!1szh-TW!2stw!4v1710240000000!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="space-y-6">
+            <h2 class="text-4xl font-serif font-bold italic">Location</h2>
+            <div class="space-y-4">
+                <p class="flex items-center gap-3"><i data-lucide="map-pin" class="gold-text"></i> <a href="https://maps.app.goo.gl/cxSSYV34rkayQcUp6?g_st=ic" target="_blank" class="underline">台北市大安區 (地圖導航)</a></p>
+                <p class="flex items-center gap-3"><i data-lucide="clock" class="gold-text"></i> 11:00 - 20:00 (預約制)</p>
+                <p class="flex items-center gap-3"><i data-lucide="message-circle" class="gold-text"></i> LINE: @956kiyzz</p>
+            </div>
+            <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="inline-block bg-gold text-white px-8 py-3 rounded-full font-bold">立即預約</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-12 text-center">
+    <div class="flex justify-center gap-8 mb-8">
+        <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank"><i data-lucide="message-circle" class="w-6 h-6"></i></a>
+        <a href="https://www.instagram.com/lou.lou_beautysalon" target="_blank"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+        <a href="https://maps.app.goo.gl/cxSSYV34rkayQcUp6?g_st=ic" target="_blank"><i data-lucide="map-pin" class="w-6 h-6"></i></a>
+    </div>
+    <p class="text-gray-600 text-[10px] tracking-widest uppercase">&copy; LouLou Beauty Salon.</p>
+</footer>
+
+<script>lucide.createIcons();</script>
+
+
+</body>
+</html>
