@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lou Lou Beauty Salon | 綻放指尖的極致優雅</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 Noto Sans, Cormorant Garamond 以及 草寫字體 Monsieur La Doulaise -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Monsieur+La+Doulaise&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -17,18 +16,14 @@
         h1, h2, h3, .serif-font {
             font-family: 'Cormorant Garamond', serif;
         }
-        
-        /* 草寫專用樣式 */
         .cursive-font {
             font-family: 'Monsieur La Doulaise', cursive;
             text-transform: none !important;
             letter-spacing: 0 !important;
         }
-
         #price, #gallery, #location, #promotion, #salon-video {
             scroll-margin-top: 100px;
         }
-
         .btn-shine {
             position: relative;
             overflow: hidden;
@@ -53,7 +48,6 @@
             0% { transform: translateX(-100%) rotate(45deg); }
             100% { transform: translateX(100%) rotate(45deg); }
         }
-
         .price-item {
             display: flex;
             justify-content: space-between;
@@ -61,7 +55,6 @@
             padding-bottom: 0.6rem;
             border-bottom: 1px solid #F3F4F6;
         }
-
         .nav-link {
             position: relative;
             cursor: pointer;
@@ -77,19 +70,15 @@
         .nav-link:hover::after {
             width: 100%;
         }
-
         #mobile-menu-box {
             display: none;
         }
         #mobile-menu-box.active {
             display: block;
         }
-
         .promo-gradient {
             background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
         }
-
-        /* 跑馬燈樣式 */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -117,7 +106,6 @@
                 margin-right: 16px;
             }
         }
-
         .play-pulse {
             animation: pulse 2s infinite;
         }
@@ -130,7 +118,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- 導覽列 -->
+    <!-- Navbar -->
     <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex justify-between items-center">
             <a href="#" class="text-3xl md:text-4xl text-[#B76E79] cursive-font">Lou Lou</a>
@@ -138,17 +126,16 @@
             <div class="hidden lg:flex space-x-8 text-xs tracking-widest font-medium text-gray-400">
                 <a href="#promotion" class="nav-link hover:text-[#B76E79] transition-colors uppercase font-bold text-[#B76E79]">Event</a>
                 <a href="#price" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Price</a>
+                <!-- 作品集連結恢復 -->
                 <a href="https://www.instagram.com/lou.lou_beautysalon?igsh=MXR6cmVxOHV3c2h3Zg%3D%3D&utm_source=qr" target="_blank" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Portfolio</a>
                 <a href="#location" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Location</a>
             </div>
 
             <div class="flex items-center gap-2 md:gap-4">
-                <!-- 加入 Line 按鈕 -->
                 <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="flex items-center gap-1.5 bg-[#06C755] text-white px-3 md:px-5 py-2.5 rounded-full text-[10px] md:text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
                     <span>LINE</span>
                 </a>
-                <!-- 線上預約按鈕 -->
                 <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="hidden sm:block btn-shine bg-[#B76E79] text-white px-4 md:px-8 py-2.5 rounded-full text-[10px] md:text-sm font-medium shadow-md">
                     線上預約
                 </a>
@@ -158,7 +145,6 @@
             </div>
         </div>
         
-        <!-- 手機版隱藏選單 -->
         <div id="mobile-menu-box" class="lg:hidden bg-white border-b border-gray-100">
             <div class="flex flex-col py-6 space-y-6 text-sm tracking-[0.2em] font-medium text-gray-500 text-center">
                 <a href="#promotion" class="mobile-link text-[#B76E79] font-bold">EVENT 壽星優惠</a>
@@ -170,7 +156,7 @@
         </div>
     </nav>
 
-    <!-- 活動看板 -->
+    <!-- Promotion Section -->
     <section id="promotion" class="pt-32 pb-12 px-6">
         <div class="max-w-5xl mx-auto">
             <div class="promo-gradient rounded-[40px] p-8 md:p-16 relative overflow-hidden shadow-lg border border-white/50 text-center">
@@ -189,14 +175,12 @@
         </div>
     </section>
 
-    <!-- 介紹影片區塊 - 移除文字僅保留播放圖案 -->
+    <!-- Video Section - Pure Image + Play Icon -->
     <section id="salon-video" class="py-12 px-6">
         <div class="max-w-6xl mx-auto px-4 md:px-0">
             <a href="https://maps.app.goo.gl/tNTCtPAAcKSFdmtx9" target="_blank" class="group relative block rounded-[50px] overflow-hidden shadow-2xl bg-gray-100 aspect-video md:aspect-[21/9]">
-                <!-- 使用指定封面圖片 -->
                 <img src="https://i.postimg.cc/bwTKZx0j/IMG-0999.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Lou Lou Salon Interior">
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <!-- 僅保留播放按鈕 -->
                     <div class="play-pulse w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/40 group-hover:scale-110 group-hover:bg-white/30 transition-all duration-300">
                         <i data-lucide="play" class="fill-current w-8 h-8 ml-1"></i>
                     </div>
@@ -205,7 +189,7 @@
         </div>
     </section>
 
-    <!-- 價目表 Section -->
+    <!-- Price List Section -->
     <section id="price" class="py-24 bg-white">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-20">
@@ -214,7 +198,6 @@
             </div>
             
             <div class="grid md:grid-cols-2 gap-x-20 gap-y-16">
-                <!-- 凝膠款式 -->
                 <div>
                     <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Gel Nails 凝膠系列</h3>
                     <div class="space-y-6">
@@ -224,8 +207,6 @@
                         <div class="price-item"><span>造型設計款式 (依報價)</span><span class="font-semibold text-[#B76E79]">$1,299 UP</span></div>
                     </div>
                 </div>
-
-                <!-- 手足保養 -->
                 <div>
                     <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Spa Care 手足保養</h3>
                     <div class="space-y-6">
@@ -234,31 +215,11 @@
                         <div class="price-item"><span>深層保養 (手/足)</span><span class="font-semibold text-[#B76E79]">$1,399 / $1,899</span></div>
                     </div>
                 </div>
-
-                <!-- 專業卸甲 -->
-                <div>
-                    <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Removal 專業卸甲</h3>
-                    <div class="space-y-6">
-                        <div class="price-item"><span>卸甲續作</span><span class="font-semibold text-[#B76E79]">$300</span></div>
-                        <div class="price-item"><span>純卸甲</span><span class="font-semibold text-[#B76E79]">$500</span></div>
-                    </div>
-                </div>
-
-                <!-- 增值服務 -->
-                <div>
-                    <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Add-on 增值服務</h3>
-                    <div class="space-y-6">
-                        <div class="price-item"><span>足部坎甲矯正 (單指)</span><span class="font-semibold text-[#B76E79]">$800</span></div>
-                        <div class="price-item"><span>延甲服務 (單指)</span><span class="font-semibold text-[#B76E79]">$150</span></div>
-                        <div class="price-item"><span>斷裂修補 (單指)</span><span class="font-semibold text-[#B76E79]">$100</span></div>
-                        <div class="price-item"><span>單去足底繭</span><span class="font-semibold text-[#B76E79]">$500</span></div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- 跑馬燈作品集 Section -->
+    <!-- Gallery Section -->
     <section id="gallery" class="py-24 bg-[#F9F9F9] overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center mb-16">
             <h2 class="text-5xl font-light mb-4 serif-font italic text-gray-800">Portfolio</h2>
@@ -267,7 +228,6 @@
 
         <div class="marquee-container">
             <div class="marquee-content">
-                <!-- 4 格作品 -->
                 <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
                     <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品1">
                 </div>
@@ -280,7 +240,6 @@
                 <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
                     <img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" class="w-full h-full object-cover" alt="作品4">
                 </div>
-                <!-- 重複內容實現無限滾動 -->
                 <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
                     <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品1">
                 </div>
@@ -303,7 +262,7 @@
         </div>
     </section>
 
-    <!-- 地點資訊 Section -->
+    <!-- Location Section -->
     <section id="location" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
             <div>
@@ -334,13 +293,14 @@
     <footer class="bg-white py-20 border-t border-gray-50 text-center">
         <h2 class="text-5xl text-[#B76E79] mb-8 cursive-font">Lou Lou</h2>
         <div class="flex justify-center space-x-6 mb-10">
+            <!-- IG 連結恢復 -->
             <a href="https://www.instagram.com/lou.lou_beautysalon?igsh=MXR6cmVxOHV3c2h3Zg%3D%3D&utm_source=qr" target="_blank" class="text-gray-300 hover:text-[#B76E79] transition-colors"><i data-lucide="instagram"></i></a>
             <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="text-gray-300 hover:text-[#B76E79] transition-colors"><i data-lucide="message-circle"></i></a>
         </div>
         <p class="text-gray-300 text-[10px] tracking-widest uppercase">&copy; 2026 Lou Lou Beauty Salon. All Rights Reserved.</p>
     </footer>
 
-    <!-- 手機底部固定欄 (LINE + 預約) -->
+    <!-- Mobile Sticky Menu -->
     <div class="fixed bottom-0 left-0 w-full p-4 bg-white/95 backdrop-blur-md border-t border-gray-100 z-50 lg:hidden shadow-lg flex gap-3">
         <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="flex-1 bg-[#06C755] text-white flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-xs tracking-widest uppercase">
             <i data-lucide="message-circle" class="w-4 h-4"></i> LINE
@@ -352,7 +312,6 @@
 
     <script>
         lucide.createIcons();
-
         const menuBtn = document.getElementById('menu-btn');
         const menuBox = document.getElementById('mobile-menu-box');
         const mobileLinks = document.querySelectorAll('.mobile-link');
