@@ -5,155 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LouLou Beauty Salon | 極致指尖美學</title>
     <style>
-        body { margin: 0; padding: 0; font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #FDFBF9; color: #333; -webkit-font-smoothing: antialiased; }
-        .header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); border-bottom: 1px solid #f0f0f0; height: 70px; display: flex; align-items: center; justify-content: space-around; z-index: 999; }
-        .brand-name { color: #C5A059; font-weight: bold; letter-spacing: 5px; font-size: 1.1rem; }
-        .book-now { background: #C5A059; color: #fff; text-decoration: none; padding: 8px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        /* 基礎全域樣式 */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: #FDFBF9; 
+            color: #333; 
+            -webkit-font-smoothing: antialiased; 
+        }
+        .header { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background: rgba(255, 255, 255, 0.98); 
+            border-bottom: 1px solid #f0f0f0; 
+            height: 70px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-around; 
+            z-index: 999; 
+        }
+        .brand-name { 
+            color: #C5A059; 
+            font-weight: bold; 
+            letter-spacing: 5px; 
+            font-size: 1.1rem; 
+        }
+        .book-now { 
+            background: #C5A059; 
+            color: #fff; 
+            text-decoration: none; 
+            padding: 8px 18px; 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+        }
         
-        .hero { padding: 130px 20px 40px; text-align: center; }
-        .hero h1 { font-size: 2.4rem; margin: 0 0 15px; font-weight: 800; }
-        .hero p { color: #999; font-size: 0.85rem; line-height: 1.8; margin-bottom: 30px; }
+        .hero { 
+            padding: 130px 20px 40px; 
+            text-align: center; 
+        }
+        .hero h1 { 
+            font-size: 2.4rem; 
+            margin: 0 0 15px; 
+            font-weight: 800; 
+        }
+        .hero p { 
+            color: #999; 
+            font-size: 0.85rem; 
+            line-height: 1.8; 
+            margin-bottom: 30px; 
+        }
 
-        /* 價目表區塊設計 */
+        /* 價目表樣式 */
         .price-section { padding: 40px 20px; background: #fff; border-radius: 40px 40px 0 0; }
         .section-title { text-align: center; margin-bottom: 30px; }
         .section-title h2 { color: #C5A059; font-size: 1.2rem; letter-spacing: 3px; margin: 0; }
-        .section-title p { font-size: 0.7rem; color: #aaa; margin: 5px 0 0; }
-
         .price-container { max-width: 600px; margin: 0 auto; }
         .price-category { margin-bottom: 30px; border-bottom: 1px solid #f9f4ee; padding-bottom: 15px; }
         .category-name { color: #8a6d3b; font-size: 1rem; font-weight: bold; margin-bottom: 15px; display: flex; align-items: center; }
         .category-name::after { content: ""; flex: 1; height: 1px; background: #eee; margin-left: 15px; }
-        
         .price-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
         .item-name { font-size: 0.9rem; color: #444; }
         .item-dots { flex: 1; border-bottom: 1px dotted #ddd; margin: 0 10px; position: relative; top: -4px; }
-        .item-price { font-size: 0.9rem; font-weight: bold; color: #333; font-family: "Georgia", serif; }
-        .item-desc { font-size: 0.7rem; color: #999; margin-top: -8px; margin-bottom: 12px; }
+        .item-price { font-size: 0.9rem; font-weight: bold; color: #333; }
 
-        /* 作品集區域 */
+        /* 作品集區域 - 更新圖片 */
         .gallery-section { padding: 40px 15px; text-align: center; background: #FDFBF9; }
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 500px; margin: 0 auto; }
-        .gallery-item { background: #eee; aspect-ratio: 1 / 1; border-radius: 15px; overflow: hidden; position: relative; }
-        .gallery-item img, .gallery-item video { width: 100%; height: 100%; object-fit: cover; display: block; }
-        
-        /* 服務資訊 */
+        .gallery-item { background: #eee; aspect-ratio: 1 / 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        /* 服務資訊區塊 */
         .info-section { background: #fff; padding: 40px 20px; }
         .info-item { background: #FDFBF9; padding: 20px; border-radius: 20px; margin-bottom: 15px; }
         .info-item h4 { margin: 0 0 5px; color: #C5A059; font-size: 1rem; }
         .info-item p, .info-item a { margin: 0; font-size: 0.85rem; color: #666; text-decoration: none; }
         
+        /* 地圖點擊優化 */
         .map-container { position: relative; width: 100%; margin-top: 25px; }
         .map-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; }
         .map-wrapper { width: 100%; height: 280px; border-radius: 25px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.1); pointer-events: none; }
         
         .footer { background: #111; color: #fff; padding: 60px 20px; text-align: center; }
         .footer h3 { color: #C5A059; letter-spacing: 5px; margin-bottom: 30px; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.8rem; border: 1px solid #333; padding: 10px 20px; border-radius: 30px; margin: 0 5px; }
     </style>
 </head>
 <body>
 
+    <!-- 導覽列 -->
     <div class="header">
         <div class="brand-name">LOULOU</div>
         <a href="https://line.me/R/ti/p/@956kiyzz" class="book-now">立即預約</a>
     </div>
 
+    <!-- 標題區 -->
     <div class="hero">
         <h2>Professional Studio</h2>
         <h1>LouLou Beauty</h1>
         <p>結合藝術靈感與極致護理<br>打造專屬您的閃耀美學</p>
     </div>
 
-    <!-- 價目表區塊 -->
+    <!-- 價目表 -->
     <div class="price-section">
         <div class="section-title">
             <h2>Service Menu</h2>
             <p>服務項目及價目表</p>
         </div>
-
         <div class="price-container">
-            <!-- 美甲類別 -->
             <div class="price-category">
                 <div class="category-name">NAILS 美甲服務</div>
-                <div class="price-item">
-                    <span class="item-name">單色/跳色凝膠</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 800 UP</span>
-                </div>
-                <div class="price-item">
-                    <span class="item-name">法式/漸層設計</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 1,000 UP</span>
-                </div>
-                <div class="price-item">
-                    <span class="item-name">精緻手繪設計</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 1,500 UP</span>
-                </div>
-                <p class="item-desc">* 包含基礎修整與指緣護理</p>
+                <div class="price-item"><span class="item-name">單色/跳色凝膠</span><span class="item-dots"></span><span class="item-price">$ 800 UP</span></div>
+                <div class="price-item"><span class="item-name">法式/漸層設計</span><span class="item-dots"></span><span class="item-price">$ 1,000 UP</span></div>
+                <div class="price-item"><span class="item-name">精緻手繪設計</span><span class="item-dots"></span><span class="item-price">$ 1,500 UP</span></div>
             </div>
-
-            <!-- 睫毛類別 -->
-            <div class="price-category">
-                <div class="category-name">LASHES 睫毛嫁接</div>
-                <div class="price-item">
-                    <span class="item-name">日式自然款 (120根)</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 1,200</span>
-                </div>
-                <div class="price-item">
-                    <span class="item-name">韓式濃密款 (不限根數)</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 1,800</span>
-                </div>
-            </div>
-
-            <!-- 卸甲/保養 -->
             <div class="price-category">
                 <div class="category-name">CARE 卸甲與護理</div>
-                <div class="price-item">
-                    <span class="item-name">本店卸甲續做</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 200</span>
-                </div>
-                <div class="price-item">
-                    <span class="item-name">他店卸甲續做</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 500</span>
-                </div>
-                <div class="price-item">
-                    <span class="item-name">深層手足護理</span>
-                    <span class="item-dots"></span>
-                    <span class="item-price">$ 800 UP</span>
-                </div>
+                <div class="price-item"><span class="item-name">本店卸甲續做</span><span class="item-dots"></span><span class="item-price">$ 200</span></div>
+                <div class="price-item"><span class="item-name">他店卸甲續做</span><span class="item-dots"></span><span class="item-price">$ 300</span></div>
             </div>
         </div>
-        <p style="text-align: center; font-size: 0.7rem; color: #bbb; margin-top: 10px;">* 實際價格依設計複雜度與現場溝通為準</p>
     </div>
 
-    <!-- 作品展示區塊 -->
+    <!-- 作品集區 - 使用新上傳的照片網址 -->
     <div class="gallery-section">
         <h3 style="letter-spacing: 2px; margin-bottom: 20px; font-size: 1rem;">Portfolio 作品集</h3>
         <div class="gallery-grid">
+            <!-- 作品 1 -->
             <div class="gallery-item">
-                <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" alt="美甲作品">
+                <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" alt="[作品 1]">
             </div>
+            <!-- 作品 2 -->
             <div class="gallery-item">
-                <img src="https://i.postimg.cc/L5cCnT6y/IMG-1467.jpg" alt="美甲作品">
+                <img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" alt="[作品 2]">
             </div>
+            <!-- 作品 3 -->
             <div class="gallery-item">
-                <img src="https://i.postimg.cc/L5cCnT6y/IMG-1466.jpg" alt="美甲作品">
+                <img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" alt="[作品 3]">
             </div>
-           <div class="gallery-item">
-                <img src="https://i.postimg.cc/L5cCnT6y/IMG-1465.jpg" alt="美甲作品">
+            <!-- 作品 4 -->
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" alt="[作品 4]">
             </div>
         </div>
+        <p style="font-size: 0.75rem; color: #aaa; margin-top: 15px;">※ 更多作品歡迎關注官方 Instagram</p>
     </div>
 
-    <!-- 服務資訊區塊 -->
+    <!-- 服務資訊與導航 -->
     <div class="info-section">
         <div class="info-item">
             <h4>店舖位置 Location</h4>
+            <!-- 使用您提供的新地圖連結 -->
             <a href="https://maps.app.goo.gl/jbUy9vkDJ9xKHgYj8?g_st=il" target="_blank">台北市大同區南京西路89號3F (點擊導航)</a>
         </div>
         <div class="info-item">
@@ -162,22 +166,24 @@
         </div>
 
         <div class="map-container">
-            <a href="https://www.google.com/maps/search/?api=1&query=台北市大同區南京西路89號3F" target="_blank" class="map-link-overlay"></a>
+            <!-- 點擊地圖區塊會跳轉至您提供的新地圖連結 -->
+            <a href="https://maps.app.goo.gl/jbUy9vkDJ9xKHgYj8?g_st=il" target="_blank" class="map-link-overlay"></a>
             <div class="map-wrapper">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.545860715367!2d121.5147823!3d25.0543666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96b997c4199%3A0x673c683889163e77!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5Y2X5Lqs6KW_6LevODnomZ8zZg!5e0!3m2!1szh-TW!2stw!4v1710245000000!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
+            <p style="text-align: center; font-size: 0.7rem; color: #C5A059; margin-top: 8px;">📍 點擊地圖即可開啟 Google Maps 導覽</p>
         </div>
     </div>
 
+    <!-- 頁尾 -->
     <div class="footer">
         <h3>LouLou Beauty Salon</h3>
         <div class="footer-links">
-            <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" style="color:#888; text-decoration:none; padding:10px 20px; border:1px solid #333; border-radius:30px;">LINE</a>
-            <a href="https://www.instagram.com/lou.lou_beautysalon" target="_blank" style="color:#888; text-decoration:none; padding:10px 20px; border:1px solid #333; border-radius:30px; margin-left:10px;">Instagram</a>
+            <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank">LINE</a>
+            <a href="https://www.instagram.com/lou.lou_beautysalon" target="_blank">Instagram</a>
         </div>
         <p style="margin-top: 40px; color: #444; font-size: 10px; letter-spacing: 2px;">© 2024 LOULOU BEAUTY SALON</p>
     </div>
 
 </body>
 </html>
-
