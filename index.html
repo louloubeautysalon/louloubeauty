@@ -17,8 +17,8 @@
             font-family: 'Cormorant Garamond', serif;
         }
         
-        /* 滾動偏移補償：解決導覽列擋住標題的問題 */
-        #price, #gallery, #location {
+        /* 滾動偏移補償 */
+        #price, #gallery, #location, #promotion {
             scroll-margin-top: 100px;
         }
 
@@ -29,10 +29,8 @@
         .btn-shine::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: linear-gradient(
                 to bottom right,
                 rgba(255, 255, 255, 0) 0%,
@@ -64,10 +62,8 @@
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
+            bottom: -4px; left: 0;
+            width: 0; height: 1px;
             background: #B76E79;
             transition: width 0.3s ease;
         }
@@ -75,12 +71,16 @@
             width: 100%;
         }
 
-        /* 手機版選單顯示/隱藏 */
         #mobile-menu-box {
             display: none;
         }
         #mobile-menu-box.active {
             display: block;
+        }
+
+        /* 活動看板漸層 */
+        .promo-gradient {
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
         }
     </style>
 </head>
@@ -91,8 +91,8 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-[0.3em] text-[#B76E79] serif-font">LOULOU</a>
             
-            <!-- 桌面版連結：使用最穩定的 href 錨點 -->
             <div class="hidden md:flex space-x-10 text-xs tracking-widest font-medium text-gray-400">
+                <a href="#promotion" class="nav-link hover:text-[#B76E79] transition-colors uppercase font-bold text-[#B76E79]">Event</a>
                 <a href="#price" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Price</a>
                 <a href="#gallery" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Portfolio</a>
                 <a href="#location" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Location</a>
@@ -108,9 +108,10 @@
             </div>
         </div>
         
-        <!-- 手機版選單區塊 -->
+        <!-- 手機選單 -->
         <div id="mobile-menu-box" class="md:hidden bg-white border-b border-gray-100">
             <div class="flex flex-col py-6 space-y-6 text-sm tracking-[0.2em] font-medium text-gray-500 text-center">
+                <a href="#promotion" class="mobile-link text-[#B76E79] font-bold">EVENT 壽星優惠</a>
                 <a href="#price" class="mobile-link">PRICE 價目表</a>
                 <a href="#gallery" class="mobile-link">PORTFOLIO 作品集</a>
                 <a href="#location" class="mobile-link">LOCATION 地點</a>
@@ -118,19 +119,31 @@
         </div>
     </nav>
 
-    <!-- 懸浮 LINE 按鈕 -->
-    <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="fixed right-6 bottom-24 md:bottom-10 z-[60]">
-        <div class="w-14 h-14 bg-[#06C755] rounded-full flex items-center justify-center shadow-xl">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M24 10.304c0-5.231-5.373-9.471-12-9.471s-12 4.24-12 9.471c0 4.689 4.265 8.599 10.031 9.334.39.084.922.257 1.058.591.121.303.079.778.038 1.084l-.17 1.022c-.051.303-.245 1.186 1.054.647 1.299-.538 6.999-4.123 9.541-7.041 1.543-1.687 2.448-3.636 2.448-5.637zm-15.688 3.518h-1.631c-.191 0-.346-.156-.346-.348v-4.102c0-.191.155-.348.346-.348h1.631c.191 0 .346.157.346.348v.571c0 .191-.155.348-.346.348h-1.06v.572h1.06c.191 0 .346.157.346.348v.572c0 .191-.155.348-.346.348h-1.06v.571h1.06c.191 0 .346.157.346.348v.572c0 .192-.155.348-.346.348zm3.693 0h-1.631c-.191 0-.346-.156-.346-.348v-4.102c0-.191.155-.348.346-.348h.57c.191 0 .346.157.346.348v3.53h.715c.191 0 .346.157.346.348v.572c0 .192-.155.348-.346.348zm2.741 0h-.57c-.191 0-.346-.156-.346-.348v-4.102c0-.191.155-.348.346-.348h.57c.191 0 .346.157.346.348v4.102c0 .192-.155.348-.346.348zm4.493 0h-.571c-.191 0-.346-.156-.346-.348v-2.348l-1.353-1.92c-.113-.159-.039-.182.046-.182h.674c.12 0 .227.054.293.151l1.011 1.51 1.011-1.51c.066-.097.173-.151.293-.151h.674c.085 0 .159.023.046.182l-1.353 1.92v2.348c0 .192-.155.348-.346.348z"/></svg>
+    <!-- 活動看板 Section -->
+    <section id="promotion" class="pt-32 pb-12 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="promo-gradient rounded-[40px] p-8 md:p-16 relative overflow-hidden shadow-lg border border-white/50 text-center">
+                <div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
+                    <i data-lucide="cake" class="w-32 h-32 text-[#B76E79]"></i>
+                </div>
+                <span class="inline-block text-[#B76E79] tracking-[0.4em] text-xs mb-4 font-bold">BIRTHDAY SPECIAL</span>
+                <h2 class="text-4xl md:text-6xl font-light mb-6 serif-font italic text-[#8E5A63]">當月壽星專屬禮遇</h2>
+                <div class="w-20 h-[1px] bg-[#B76E79] mx-auto mb-8"></div>
+                <p class="text-lg md:text-2xl text-gray-600 font-light mb-8 leading-relaxed">
+                    凡當月壽星預約美甲或保養項目<br>
+                    <span class="text-3xl md:text-4xl font-semibold text-[#B76E79] mx-2">一律享有 7 折</span> 優惠
+                </p>
+                <p class="text-xs text-gray-400 tracking-widest uppercase">* 需出示證件，不與其他優惠並用</p>
+            </div>
         </div>
-    </a>
+    </section>
 
     <!-- Hero -->
-    <header class="relative pt-40 pb-20 bg-white">
+    <header class="relative py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h1 class="text-6xl md:text-8xl font-light mb-10 leading-tight tracking-tight serif-font">LouLou Beauty</h1>
-            <p class="max-w-xl mx-auto text-gray-400 font-light leading-relaxed mb-12">在紛擾的城市中，為您的指尖尋覓一處靜謐優雅。</p>
-            <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="btn-shine bg-[#B76E79] text-white px-12 py-4 rounded-full text-xs tracking-[0.2em] font-medium shadow-xl">立即預約</a>
+            <p class="max-w-xl mx-auto text-gray-400 font-light leading-relaxed mb-12">精湛工藝，綻放您的優雅日常。</p>
+            <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="btn-shine bg-[#B76E79] text-white px-12 py-4 rounded-full text-xs tracking-[0.2em] font-medium shadow-xl">立即預約 BOOK NOW</a>
         </div>
     </header>
 
@@ -139,23 +152,48 @@
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-light mb-4 serif-font italic">Price List</h2>
+                <p class="text-xs tracking-[0.2em] text-gray-400">專業美甲與極致保養</p>
             </div>
+            
             <div class="grid md:grid-cols-2 gap-x-20 gap-y-16">
-                <!-- 凝膠項目 -->
+                <!-- 凝膠款式 -->
                 <div>
-                    <h3 class="text-[#B76E79] text-lg font-medium mb-8">Gel Nails 凝膠系列</h3>
+                    <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Gel Nails 凝膠系列</h3>
                     <div class="space-y-6">
-                        <div class="price-item"><span>單色 / 跳色 凝膠</span><span class="font-semibold">$1,000</span></div>
-                        <div class="price-item"><span>貓眼凝膠</span><span class="font-semibold">$1,200</span></div>
-                        <div class="price-item"><span>法式 / 漸層凝膠</span><span class="font-semibold">$1,300</span></div>
+                        <div class="price-item"><span>單色 / 跳色 凝膠</span><span class="font-semibold text-[#B76E79]">$1,000</span></div>
+                        <div class="price-item"><span>貓眼凝膠</span><span class="font-semibold text-[#B76E79]">$1,300</span></div>
+                        <div class="price-item"><span>法式 / 漸層 凝膠</span><span class="font-semibold text-[#B76E79]">$1,500</span></div>
+                        <div class="price-item"><span>造型設計款式 (依報價)</span><span class="font-semibold text-[#B76E79]">$1,299 UP</span></div>
                     </div>
                 </div>
+
+                <!-- 手足保養 -->
+                <div>
+                    <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Spa Care 手足保養</h3>
+                    <div class="space-y-6">
+                        <div class="price-item"><span>基礎保養 (手/足)</span><span class="font-semibold text-[#B76E79]">$499 / $599</span></div>
+                        <div class="price-item"><span>細緻保養 (手/足)</span><span class="font-semibold text-[#B76E79]">$899 / $1,399</span></div>
+                        <div class="price-item"><span>深層保養 (手/足)</span><span class="font-semibold text-[#B76E79]">$1,399 / $1,899</span></div>
+                    </div>
+                </div>
+
                 <!-- 專業卸甲 -->
                 <div>
-                    <h3 class="text-[#B76E79] text-lg font-medium mb-8">Removal 專業卸甲</h3>
+                    <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Removal 專業卸甲</h3>
                     <div class="space-y-6">
-                        <div class="price-item"><span>卸甲續作</span><span class="font-semibold">$300</span></div>
-                        <div class="price-item"><span>純卸甲</span><span class="font-semibold">$500</span></div>
+                        <div class="price-item"><span>卸甲續作</span><span class="font-semibold text-[#B76E79]">$300</span></div>
+                        <div class="price-item"><span>純卸甲</span><span class="font-semibold text-[#B76E79]">$500</span></div>
+                    </div>
+                </div>
+
+                <!-- 增值服務 -->
+                <div>
+                    <h3 class="text-[#B76E79] text-lg font-medium mb-8 border-l-2 border-[#B76E79] pl-4">Add-on 增值服務</h3>
+                    <div class="space-y-6">
+                        <div class="price-item"><span>足部坎甲矯正 (單指)</span><span class="font-semibold text-[#B76E79]">$800</span></div>
+                        <div class="price-item"><span>延甲服務 (單指)</span><span class="font-semibold text-[#B76E79]">$150</span></div>
+                        <div class="price-item"><span>斷裂修補 (單指)</span><span class="font-semibold text-[#B76E79]">$100</span></div>
+                        <div class="price-item"><span>單去足底繭</span><span class="font-semibold text-[#B76E79]">$500</span></div>
                     </div>
                 </div>
             </div>
@@ -164,13 +202,13 @@
 
     <!-- Gallery Section -->
     <section id="gallery" class="py-24 bg-[#F9F9F9]">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-light mb-16 serif-font italic text-center">Gallery</h2>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-light mb-16 serif-font italic">Portfolio</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                <div class="rounded-3xl overflow-hidden aspect-[3/4]"><img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品"></div>
-                <div class="rounded-3xl overflow-hidden aspect-[3/4] md:mt-12"><img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" class="w-full h-full object-cover" alt="作品"></div>
-                <div class="rounded-3xl overflow-hidden aspect-[3/4]"><img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" class="w-full h-full object-cover" alt="作品"></div>
-                <div class="rounded-3xl overflow-hidden aspect-[3/4] md:mt-12"><img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" class="w-full h-full object-cover" alt="作品"></div>
+                <div class="rounded-3xl overflow-hidden aspect-[3/4] shadow-sm"><img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品"></div>
+                <div class="rounded-3xl overflow-hidden aspect-[3/4] shadow-sm md:mt-12"><img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" class="w-full h-full object-cover" alt="作品"></div>
+                <div class="rounded-3xl overflow-hidden aspect-[3/4] shadow-sm"><img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" class="w-full h-full object-cover" alt="作品"></div>
+                <div class="rounded-3xl overflow-hidden aspect-[3/4] shadow-sm md:mt-12"><img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" class="w-full h-full object-cover" alt="作品"></div>
             </div>
         </div>
     </section>
@@ -179,13 +217,14 @@
     <section id="location" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
             <div>
-                <h2 class="text-5xl font-light mb-12 serif-font italic">Studio</h2>
-                <div class="space-y-8">
-                    <p class="text-lg text-gray-600">台北市大同區南京西路 89 號 3 樓</p>
-                    <a href="https://maps.app.goo.gl/jbUy9vkDJ9xKHgYj8?g_st=il" target="_blank" class="inline-block text-[#B76E79] font-bold border-b border-rose-200">GOOGLE MAPS</a>
+                <h2 class="text-5xl font-light mb-12 serif-font italic">Location</h2>
+                <div class="space-y-6">
+                    <p class="text-xl text-gray-700 font-medium">南京西路店</p>
+                    <p class="text-lg text-gray-500">台北市大同區南京西路 89 號 3 樓</p>
+                    <a href="https://maps.app.goo.gl/jbUy9vkDJ9xKHgYj8?g_st=il" target="_blank" class="inline-block px-8 py-3 bg-gray-50 text-[#B76E79] font-bold rounded-full border border-rose-100 hover:bg-rose-50 transition-colors">導航至工作室</a>
                 </div>
             </div>
-            <div class="h-[400px] rounded-[60px] overflow-hidden shadow-xl border-8 border-white">
+            <div class="h-[400px] rounded-[50px] overflow-hidden shadow-2xl border-4 border-white">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.545860715367!2d121.5147823!3d25.0543666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96b997c4199%3A0x673c683889163e77!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5Y2X5Lqs6KW_6LevODnomZ8zZg!5e0!3m2!1szh-TW!2stw!4v1710245000000!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
             </div>
         </div>
@@ -197,18 +236,17 @@
         <p class="text-gray-300 text-[10px] tracking-widest">&copy; 2026 LouLou Beauty Salon.</p>
     </footer>
 
-    <!-- Mobile Bottom Fixed Button -->
-    <div class="fixed bottom-0 left-0 w-full p-4 bg-white/90 backdrop-blur-md border-t border-gray-100 z-50 md:hidden">
+    <!-- 手機預約按鈕 -->
+    <div class="fixed bottom-0 left-0 w-full p-4 bg-white/95 backdrop-blur-md border-t border-gray-100 z-50 md:hidden shadow-lg">
         <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="btn-shine bg-[#B76E79] text-white block w-full py-4 rounded-full font-bold text-center text-xs tracking-widest">
-            立即預約
+            立即預約 BOOK NOW
         </a>
     </div>
 
     <script>
-        // 初始化 Lucide 圖標
         lucide.createIcons();
 
-        // 手機版選單切換邏輯
+        // 選單開關
         const menuBtn = document.getElementById('menu-btn');
         const menuBox = document.getElementById('mobile-menu-box');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -218,7 +256,6 @@
             menuBox.classList.toggle('active');
         });
 
-        // 點擊手機選單連結後關閉選單
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuBox.classList.remove('active');
