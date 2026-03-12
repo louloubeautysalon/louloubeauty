@@ -51,30 +51,29 @@
             transform: scale(1.08);
         }
 
-        /* 隱藏滾動條 */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #E5E5E5; border-radius: 10px; }
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #F3F4F6;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- 導航列 -->
+    <!-- 導覽列 -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-[0.3em] text-[#B76E79] serif-font">LOULOU</a>
-            
             <div class="hidden md:flex space-x-10 text-sm tracking-widest font-light text-gray-500">
                 <a href="#price" class="hover:text-[#B76E79] transition-colors">PRICE</a>
                 <a href="#gallery" class="hover:text-[#B76E79] transition-colors">PORTFOLIO</a>
                 <a href="#location" class="hover:text-[#B76E79] transition-colors">LOCATION</a>
             </div>
-
             <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="hidden md:block btn-shine bg-[#B76E79] text-white px-8 py-2.5 rounded-full text-sm font-medium shadow-md">
                 線上預約
             </a>
-            
-            <!-- Mobile Menu Icon (Placeholder) -->
             <div class="md:hidden text-gray-400">
                 <i data-lucide="menu"></i>
             </div>
@@ -94,90 +93,68 @@
     <!-- Hero Section -->
     <header class="relative pt-32 pb-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <span class="inline-block text-[#B76E79] tracking-[0.4em] text-xs mb-4 animate-fade-in uppercase">Fine Art of Manicure</span>
+            <span class="inline-block text-[#B76E79] tracking-[0.4em] text-xs mb-4 uppercase animate-pulse">Elegant Nail Art Studio</span>
             <h1 class="text-5xl md:text-7xl font-light mb-8 leading-tight">LouLou Beauty</h1>
             <p class="max-w-xl mx-auto text-gray-500 font-light leading-relaxed mb-10 text-sm md:text-base">
                 在紛擾的城市中，為您的指尖尋覓一處靜謐優雅。我們不僅是美甲沙龍，更是您專屬的藝術工坊。
             </p>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-                <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="btn-shine bg-[#B76E79] text-white px-10 py-4 rounded-full text-sm tracking-widest font-medium w-full md:w-auto shadow-lg shadow-rose-100">
-                    立即預約行程
-                </a>
-            </div>
+            <a href="https://tw.hotcakeapp.com/g/A6KLEF" target="_blank" class="btn-shine bg-[#B76E79] text-white px-10 py-4 rounded-full text-sm tracking-widest font-medium shadow-lg shadow-rose-100">
+                立即預約行程
+            </a>
         </div>
     </header>
 
     <!-- Price Section -->
     <section id="price" class="py-24 bg-white">
-        <div class="max-w-3xl mx-auto px-6">
+        <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-light mb-4">Service Menu</h2>
+                <h2 class="text-3xl md:text-4xl font-light mb-4 tracking-widest">Service Menu</h2>
                 <div class="w-12 h-[1px] bg-[#B76E79] mx-auto"></div>
             </div>
             
-            <div class="space-y-12">
-                <!-- Nails -->
-                <div>
-                    <h3 class="text-[#B76E79] text-xl italic mb-6">Nail Artistry</h3>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-end border-b border-gray-100 pb-2">
-                            <span class="font-light">單色 / 跳色凝膠設計</span>
-                            <span class="text-sm font-semibold tracking-tighter">$800 UP</span>
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+                <!-- 手部凝膠 / 足部凝膠 -->
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-[#B76E79] text-xl italic mb-6 border-l-2 border-[#B76E79] pl-4">Gel Nails | 凝膠系列</h3>
+                        <div class="space-y-5">
+                            <div class="price-item"><span class="font-light">單色/跳色 (手部)</span><span class="text-sm font-semibold">$800</span></div>
+                            <div class="price-item"><span class="font-light">單色/跳色 (足部)</span><span class="text-sm font-semibold">$1,000</span></div>
+                            <div class="price-item"><span class="font-light">漸層/法式 (手部)</span><span class="text-sm font-semibold">$1,100</span></div>
+                            <div class="price-item"><span class="font-light">漸層/法式 (足部)</span><span class="text-sm font-semibold">$1,300</span></div>
+                            <div class="price-item"><span class="font-light">貓眼 (手部)</span><span class="text-sm font-semibold">$1,000</span></div>
+                            <div class="price-item"><span class="font-light">貓眼 (足部)</span><span class="text-sm font-semibold">$1,200</span></div>
+                            <div class="price-item"><span class="font-light">造型設計 (手部)</span><span class="text-sm font-semibold">$1,200 UP</span></div>
+                            <div class="price-item"><span class="font-light">造型設計 (足部)</span><span class="text-sm font-semibold">$1,400 UP</span></div>
                         </div>
-                        <div class="flex justify-between items-end border-b border-gray-100 pb-2">
-                            <span class="font-light">法式 / 漸層優雅系列</span>
-                            <span class="text-sm font-semibold tracking-tighter">$1,000 UP</span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-gray-100 pb-2">
-                            <span class="font-light">手繪造型 / 奢華飾品設計</span>
-                            <span class="text-sm font-semibold tracking-tighter">$1,500 UP</span>
+                    </div>
+
+                    <div>
+                        <h3 class="text-[#B76E79] text-xl italic mb-6 border-l-2 border-[#B76E79] pl-4">Add-on | 增值服務</h3>
+                        <div class="space-y-5">
+                            <div class="price-item"><span class="font-light">加厚不加價</span><span class="text-sm font-semibold">$0</span></div>
+                            <div class="price-item"><span class="font-light">延甲 (單指)</span><span class="text-sm font-semibold">$150</span></div>
+                            <div class="price-item"><span class="font-light">延甲 (十指)</span><span class="text-sm font-semibold">$1,200</span></div>
+                            <div class="price-item"><span class="font-light">斷裂修補 (單指)</span><span class="text-sm font-semibold">$100</span></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Care -->
-                <div>
-                    <h3 class="text-[#B76E79] text-xl italic mb-6">Care & Removal</h3>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-end border-b border-gray-100 pb-2">
-                            <span class="font-light">本店卸甲續做</span>
-                            <span class="text-sm font-semibold tracking-tighter">$200</span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-gray-100 pb-2">
-                            <span class="font-light">他店卸甲續做</span>
-                            <span class="text-sm font-semibold tracking-tighter">$300</span>
+                <!-- 卸甲 / 護理 / 單項 -->
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-[#B76E79] text-xl italic mb-6 border-l-2 border-[#B76E79] pl-4">Removal | 專業卸甲</h3>
+                        <div class="space-y-5">
+                            <div class="price-item"><span class="font-light">本店卸甲續作</span><span class="text-sm font-semibold">$200</span></div>
+                            <div class="price-item"><span class="font-light">他店卸甲續作</span><span class="text-sm font-semibold">$300</span></div>
+                            <div class="price-item"><span class="font-light">純卸甲 (本店/他店)</span><span class="text-sm font-semibold">$400 / $500</span></div>
+                            <div class="price-item"><span class="font-light">卸大鑽/延甲 (單指)</span><span class="text-sm font-semibold">$50</span></div>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <p class="text-center text-[11px] text-gray-400 mt-12 tracking-widest italic">
-                * 以上服務均包含基礎甘皮修整與指緣精華護理
-            </p>
-        </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-24 bg-[#FAFAFA]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                <div>
-                    <span class="text-[#B76E79] tracking-[0.3em] text-[10px] uppercase">Instagram</span>
-                    <h2 class="text-4xl font-light mt-2">Portfolio</h2>
-                </div>
-                <a href="https://www.instagram.com/lou.lou_beautysalon" target="_blank" class="text-sm border-b border-gray-400 pb-1 text-gray-500 hover:text-[#B76E79] hover:border-[#B76E79] transition-all">
-                    VIEW ALL ON INSTAGRAM
-                </a>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                <div class="gallery-hover overflow-hidden rounded-2xl shadow-sm aspect-[3/4]">
-                    <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="美甲作品 1">
-                </div>
-                <div class="gallery-hover overflow-hidden rounded-2xl shadow-sm aspect-[3/4] md:mt-12">
-                    <img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" class="w-full h-full object-cover" alt="美甲作品 2">
-                </div>
-                <div class="gallery-hover overflow-hidden rounded-2xl shadow-sm aspect-[3/4]">
-                    <img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" class="w-full h-full object-cover" alt="美甲作品 3">
-                </div>
-                <div class="gal
+                    <div>
+                        <h3 class="text-[#B76E79] text-xl italic mb-6 border-l-2 border-[#B76E79] pl-4">Spa Care | 手足保養</h3>
+                        <div class="space-y-5">
+                            <div class="price-item"><span class="font-light">基礎保養 (手部/足部)</span><span class="text-sm font-semibold">$500 / $700</span></div>
+                            <div class="price-item"><span class="font-light">深層保養 (手部/足部)</span><span class="text-sm font-semibold">$1,000 / $1,400</span></div>
+                        </div>
