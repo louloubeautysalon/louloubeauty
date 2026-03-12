@@ -5,184 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LouLou Beauty Salon | 極致指尖美學</title>
     <style>
-        /* 基礎樣式設定 */
-        body { 
-            margin: 0; 
-            padding: 0; 
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background-color: #FDFBF9; 
-            color: #333; 
-            -webkit-font-smoothing: antialiased; 
-        }
-        .header { 
-            position: fixed; 
-            top: 0; 
-            width: 100%; 
-            background: rgba(255, 255, 255, 0.98); 
-            border-bottom: 1px solid #f0f0f0; 
-            height: 70px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-around; 
-            z-index: 999; 
-        }
-        .brand-name { 
-            color: #C5A059; 
-            font-weight: bold; 
-            letter-spacing: 5px; 
-            font-size: 1.1rem; 
-        }
-        .book-now { 
-            background: #C5A059; 
-            color: #fff; 
-            text-decoration: none; 
-            padding: 8px 18px; 
-            border-radius: 20px; 
-            font-size: 0.8rem; 
-            font-weight: bold; 
-        }
-        .hero { 
-            padding: 130px 20px 40px; 
-            text-align: center; 
-        }
-        .hero h1 { 
-            font-size: 2.4rem; 
-            margin: 0 0 15px; 
-            font-weight: 800; 
-        }
-        .hero p { 
-            color: #999; 
-            font-size: 0.85rem; 
-            line-height: 1.8; 
-            margin-bottom: 30px; 
-        }
-        .cta-box { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 12px; 
-            padding: 0 20px; 
-        }
-        .btn-line { 
-            background: #C5A059; 
-            color: #fff; 
-            text-decoration: none; 
-            padding: 18px; 
-            border-radius: 15px; 
-            font-weight: bold; 
-            text-align: center; 
-            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2); 
-        }
-
-        /* 作品集區塊 */
-        .gallery-section { 
-            padding: 40px 15px; 
-            text-align: center; 
-        }
-        .gallery-title { 
-            font-size: 1.2rem; 
-            margin-bottom: 25px; 
-            letter-spacing: 2px; 
-            font-weight: bold; 
-        }
-        .gallery-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 12px; 
-            max-width: 500px; 
-            margin: 0 auto; 
-        }
-        .gallery-item { 
-            background: #eee; 
-            aspect-ratio: 1 / 1; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            position: relative; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-            display: block; 
-        }
-        .gallery-item img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: block; 
-        }
-        .video-tag { 
-            position: absolute; 
-            top: 10px; 
-            right: 10px; 
-            background: rgba(0,0,0,0.5); 
-            color: white; 
-            padding: 4px 8px; 
-            border-radius: 5px; 
-            font-size: 0.6rem; 
-            backdrop-filter: blur(5px); 
-        }
-
-        /* 服務資訊區塊 */
-        .content-section { 
-            background: #fff; 
-            margin-top: 20px; 
-            padding: 40px 20px; 
-            border-radius: 40px 40px 0 0; 
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.02); 
-        }
-        .info-item { 
-            background: #FDFBF9; 
-            padding: 20px; 
-            border-radius: 20px; 
-            margin-bottom: 15px; 
-        }
-        .info-item h4 { 
-            margin: 0 0 5px; 
-            color: #C5A059; 
-            font-size: 1rem; 
-        }
-        .info-item p, .info-item a { 
-            margin: 0; 
-            font-size: 0.85rem; 
-            color: #666; 
-            text-decoration: none; 
-        }
-        .map-wrapper { 
-            width: 100%; 
-            height: 280px; 
-            border-radius: 25px; 
-            overflow: hidden; 
-            margin-top: 25px; 
-            border: 6px solid #fff; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
-        }
-        .footer { 
-            background: #111; 
-            color: #fff; 
-            padding: 60px 20px; 
-            text-align: center; 
-        }
-        .footer h3 { 
-            color: #C5A059; 
-            letter-spacing: 5px; 
-            margin-bottom: 40px; 
-        }
-        .footer-links { 
-            display: flex; 
-            justify-content: center; 
-            gap: 20px; 
-        }
-        .footer-links a { 
-            color: #888; 
-            text-decoration: none; 
-            font-size: 0.8rem; 
-            border: 1px solid #333; 
-            padding: 10px 20px; 
-            border-radius: 30px; 
-        }
+        body { margin: 0; padding: 0; font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #FDFBF9; color: #333; -webkit-font-smoothing: antialiased; }
+        .header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); border-bottom: 1px solid #f0f0f0; height: 70px; display: flex; align-items: center; justify-content: space-around; z-index: 999; }
+        .brand-name { color: #C5A059; font-weight: bold; letter-spacing: 5px; font-size: 1.1rem; }
+        .book-now { background: #C5A059; color: #fff; text-decoration: none; padding: 8px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .hero { padding: 130px 20px 40px; text-align: center; }
+        .hero h1 { font-size: 2.4rem; margin: 0 0 15px; font-weight: 800; }
+        .hero p { color: #999; font-size: 0.85rem; line-height: 1.8; margin-bottom: 30px; }
+        .cta-box { display: flex; flex-direction: column; gap: 12px; padding: 0 20px; }
+        .btn-line { background: #C5A059; color: #fff; text-decoration: none; padding: 18px; border-radius: 15px; font-weight: bold; text-align: center; box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2); }
+        .gallery-section { padding: 40px 15px; text-align: center; }
+        .gallery-title { font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 2px; font-weight: bold; }
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 500px; margin: 0 auto; }
+        .gallery-item { background: #eee; aspect-ratio: 1 / 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: block; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .content-section { background: #fff; margin-top: 20px; padding: 40px 20px; border-radius: 40px 40px 0 0; box-shadow: 0 -10px 30px rgba(0,0,0,0.02); }
+        .info-item { background: #FDFBF9; padding: 20px; border-radius: 20px; margin-bottom: 15px; }
+        .info-item h4 { margin: 0 0 5px; color: #C5A059; font-size: 1rem; }
+        .info-item p, .info-item a { margin: 0; font-size: 0.85rem; color: #666; text-decoration: none; }
+        
+        /* 地圖導航優化 */
+        .map-container { position: relative; width: 100%; margin-top: 25px; }
+        .map-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; }
+        .map-wrapper { width: 100%; height: 280px; border-radius: 25px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.1); pointer-events: none; }
+        
+        .footer { background: #111; color: #fff; padding: 60px 20px; text-align: center; }
+        .footer h3 { color: #C5A059; letter-spacing: 5px; margin-bottom: 40px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.8rem; border: 1px solid #333; padding: 10px 20px; border-radius: 30px; }
     </style>
 </head>
 <body>
 
     <div class="header">
         <div class="brand-name">LOULOU</div>
-        <a href="https://line.me/R/ti/p/@956kiyzz" class="book-now" target="_blank">立即預約</a>
+        <a href="https://line.me/R/ti/p/@956kiyzz" class="book-now">立即預約</a>
     </div>
 
     <div class="hero">
@@ -190,53 +47,47 @@
         <h1>LouLou Beauty</h1>
         <p>結合藝術靈感與極致護理<br>打造專屬您的閃耀美學</p>
         <div class="cta-box">
-            <a href="https://line.me/R/ti/p/@956kiyzz" class="btn-line" target="_blank">LINE 預約 @956kiyzz</a>
+            <a href="https://line.me/R/ti/p/@956kiyzz" class="btn-line">LINE 預約 @956kiyzz</a>
         </div>
     </div>
 
-    <!-- 作品展示區塊 -->
     <div class="gallery-section">
         <div class="gallery-title">Portfolio 作品集</div>
         <div class="gallery-grid">
-            
-            <!-- 作品 1：已更新為您提供的 IG 貼文內容 -->
             <a href="https://www.instagram.com/p/DS4J-U7ARNU/" class="gallery-item" target="_blank">
-                <img src="https://scontent.cdninstagram.com/v/t51.2885-15/432177420_1143825833446545_1288556550751214088_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=18de74&_nc_ohc=WvQzQ8T0Z7QAX8uS_pG&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfC6xV_N-E_T7t4X9GvW-0pS7qX_G_G_G_G_G_G_G&oe=65F1B500" onerror="this.src='https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400'" alt="LouLou Beauty 作品">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400" alt="美甲作品">
             </a>
-
-            <!-- 作品 2：示範影片格 (可換成其他 IG 連結) -->
             <a href="https://www.instagram.com/lou.lou_beautysalon" class="gallery-item" target="_blank">
-                <div class="video-tag">VIDEO</div>
-                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400" alt="影片作品預覽">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400" alt="美甲作品">
             </a>
-
-            <!-- 作品 3 -->
             <a href="https://www.instagram.com/lou.lou_beautysalon" class="gallery-item" target="_blank">
                 <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=400" alt="美甲作品">
             </a>
-
-            <!-- 作品 4 -->
             <a href="https://www.instagram.com/lou.lou_beautysalon" class="gallery-item" target="_blank">
                 <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=400" alt="美甲作品">
             </a>
-
         </div>
-        <p style="font-size: 0.75rem; color: #aaa; margin-top: 15px;">點擊圖片前往 Instagram 查看詳細作品</p>
+        <p style="font-size: 0.75rem; color: #aaa; margin-top: 15px;">點擊圖片前往 Instagram 查看更多</p>
     </div>
 
     <div class="content-section">
         <h3 style="text-align: center; margin-bottom: 30px; font-weight: bold;">服務資訊</h3>
         <div class="info-item">
             <h4>店舖位置 Location</h4>
-            <a href="https://www.google.com/maps?q=103臺北市大同區南京西路89號Loulou+beauty+salon+%7C+中山美甲+%7C中山美甲推薦+%7C+光療指甲+%7C+紋眉+%7C+霧眉+%7C+貓眼美甲+%7C+法式指甲+%7C+美甲店3+樓&ftid=0x3442a900698b2e05:0xa52f9e4b2be60144&entry=gps&shh=CAE&lucs=,94297699,94284460,94231188,94280568,47071704,100796616,94218641,94282134,94286869&g_ep=CAISEjI2LjEwLjIuODc3MzE3OTEwMBgAIIgnKlIsOTQyOTc2OTksOTQyODQ0NjAsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsMTAwNzk2NjE2LDk0MjE4NjQxLDk0MjgyMTM0LDk0Mjg2ODY5QgJUVw%3D%3D&skid=ad8d63cf-89a6-43eb-8fe0-62357659d980&g_st=il">台北市大同區南京西路89號3F (點擊開啟導航)</a>
+            <a href="https://www.google.com/maps?q=103臺北市大同區南京西路89號Loulou+beauty+salon+%7C+中山美甲+%7C中山美甲推薦+%7C+光療指甲+%7C+紋眉+%7C+霧眉+%7C+貓眼美甲+%7C+法式指甲+%7C+美甲店3+樓&ftid=0x3442a900698b2e05:0xa52f9e4b2be60144&entry=gps&shh=CAE&lucs=,94297699,94284460,94231188,94280568,47071704,100796616,94218641,94282134,94286869&g_ep=CAISEjI2LjEwLjIuODc3MzE3OTEwMBgAIIgnKlIsOTQyOTc2OTksOTQyODQ0NjAsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsMTAwNzk2NjE2LDk0MjE4NjQxLDk0MjgyMTM0LDk0Mjg2ODY5QgJUVw%3D%3D&skid=ad8d63cf-89a6-43eb-8fe0-62357659d980&g_st=il" target="_blank">台北市大同區南京西路89號3F (點擊導航)</a>
         </div>
         <div class="info-item">
             <h4>營業時間 Hours</h4>
             <p>11:00 AM - 20:00 PM (採預約制)</p>
         </div>
-        <div class="map-wrapper">
-            <!-- 導航到南京西路 89 號 -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.545860715367!2d121.5147823!3d25.0543666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96b997c4199%3A0x673c683889163e77!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5Y2X5Lqs6KW_6LevODnomZ8zZg!5e0!3m2!1szh-TW!2stw!4v1710245000000!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <!-- 導航強化區塊 -->
+        <div class="map-container">
+            <a href="https://www.google.com/maps/search/?api=1&query=台北市大同區南京西路89號3F" target="_blank" class="map-link-overlay"></a>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.545860715367!2d121.5147823!3d25.0543666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96b997c4199%3A0x673c683889163e77!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5Y2X5Lqs6KW_6LevODnomZ8zZg!5e0!3m2!1szh-TW!2stw!4v1710245000000!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <p style="text-align: center; font-size: 0.7rem; color: #C5A059; margin-top: 8px;">📍 點擊上方地圖即可開啟導航</p>
         </div>
     </div>
 
