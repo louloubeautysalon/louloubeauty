@@ -79,6 +79,7 @@
         .promo-gradient {
             background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
         }
+        /* 跑馬燈容器 */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -86,7 +87,8 @@
         }
         .marquee-content {
             display: inline-flex;
-            animation: marquee 20s linear infinite;
+            /* 圖片變多，時間拉長一點讓速度均勻 */
+            animation: marquee 35s linear infinite;
         }
         .marquee-content:hover {
             animation-play-state: paused;
@@ -126,7 +128,6 @@
             <div class="hidden lg:flex space-x-8 text-xs tracking-widest font-medium text-gray-400">
                 <a href="#promotion" class="nav-link hover:text-[#B76E79] transition-colors uppercase font-bold text-[#B76E79]">Event</a>
                 <a href="#price" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Price</a>
-                <!-- 作品集連結恢復 -->
                 <a href="https://www.instagram.com/lou.lou_beautysalon?igsh=MXR6cmVxOHV3c2h3Zg%3D%3D&utm_source=qr" target="_blank" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Portfolio</a>
                 <a href="#location" class="nav-link hover:text-[#B76E79] transition-colors uppercase">Location</a>
             </div>
@@ -175,7 +176,7 @@
         </div>
     </section>
 
-    <!-- Video Section - Pure Image + Play Icon -->
+    <!-- Video Section -->
     <section id="salon-video" class="py-12 px-6">
         <div class="max-w-6xl mx-auto px-4 md:px-0">
             <a href="https://maps.app.goo.gl/tNTCtPAAcKSFdmtx9" target="_blank" class="group relative block rounded-[50px] overflow-hidden shadow-2xl bg-gray-100 aspect-video md:aspect-[21/9]">
@@ -219,7 +220,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section (已更新 9 張作品) -->
     <section id="gallery" class="py-24 bg-[#F9F9F9] overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center mb-16">
             <h2 class="text-5xl font-light mb-4 serif-font italic text-gray-800">Portfolio</h2>
@@ -228,29 +229,62 @@
 
         <div class="marquee-container">
             <div class="marquee-content">
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品1">
+                <!-- 第一組圖片 -->
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/0NVVn0Z5/IMG-1487.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" class="w-full h-full object-cover" alt="作品2">
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/qvLwBxPS/IMG-1486.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" class="w-full h-full object-cover" alt="作品3">
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/Fz3bMybx/IMG-1485.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" class="w-full h-full object-cover" alt="作品4">
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/tgJ3qQtZ/IMG-1484.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品1">
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/NGm1fxT6/IMG-1483.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" class="w-full h-full object-cover" alt="作品2">
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" class="w-full h-full object-cover" alt="作品3">
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
-                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm">
-                    <img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" class="w-full h-full object-cover" alt="作品4">
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+
+                <!-- 重複組 (Infinite Loop) -->
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/0NVVn0Z5/IMG-1487.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/qvLwBxPS/IMG-1486.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/Fz3bMybx/IMG-1485.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/tgJ3qQtZ/IMG-1484.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/NGm1fxT6/IMG-1483.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/L5cCnT6y/IMG-1468.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/htBnY8b1/IMG-1467.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/wxRdT4wZ/IMG-1466.jpg" class="w-full h-full object-cover" alt="作品">
+                </div>
+                <div class="marquee-item rounded-3xl overflow-hidden aspect-[3/4] shadow-sm bg-white">
+                    <img src="https://i.postimg.cc/K8xXfGm2/IMG-1465.jpg" class="w-full h-full object-cover" alt="作品">
                 </div>
             </div>
         </div>
@@ -293,7 +327,6 @@
     <footer class="bg-white py-20 border-t border-gray-50 text-center">
         <h2 class="text-5xl text-[#B76E79] mb-8 cursive-font">Lou Lou</h2>
         <div class="flex justify-center space-x-6 mb-10">
-            <!-- IG 連結恢復 -->
             <a href="https://www.instagram.com/lou.lou_beautysalon?igsh=MXR6cmVxOHV3c2h3Zg%3D%3D&utm_source=qr" target="_blank" class="text-gray-300 hover:text-[#B76E79] transition-colors"><i data-lucide="instagram"></i></a>
             <a href="https://line.me/R/ti/p/@956kiyzz" target="_blank" class="text-gray-300 hover:text-[#B76E79] transition-colors"><i data-lucide="message-circle"></i></a>
         </div>
